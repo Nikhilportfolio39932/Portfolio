@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nikhil Sai Vadlakonda | Cloud & DevOps Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #060911;
+      --card-bg: #0c1220;
+      --card-border: #1e293b;
+      --card-hover: #334155;
+      --accent: #38bdf8;
+      --emerald: #10b981;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 5rem;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      padding: 5rem 0 3.5rem;
+      border-bottom: 1px solid var(--card-border);
+      background: radial-gradient(circle at 50% 0%, rgba(0, 120, 212, 0.12) 0%, transparent 75%);
+    }
+
+    .status-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--emerald);
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--emerald);
+    }
+
+    .info-badge {
+      background: #1e293b;
+      color: var(--muted);
+      border: 1px solid var(--card-border);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .role-subtitle {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+
+    .summary {
+      color: var(--muted);
+      max-width: 850px;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .links-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.92rem;
+    }
+
+    .links-bar a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.2s;
+    }
+
+    .links-bar a:hover {
+      color: #7dd3fc;
+      text-decoration: underline;
+    }
+
+    .links-bar span {
+      color: var(--muted);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin: 2.5rem 0 3.5rem;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 1.35rem 1.5rem;
+      border-radius: 0.75rem;
+    }
+
+    .stat-num {
+      font-size: 1.85rem;
+      font-weight: 800;
+      font-family: var(--mono);
+      color: var(--text);
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      margin-top: 0.3rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .section-title h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover {
+      border-color: var(--card-hover);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .tag {
+      background: #1e293b;
+      color: #cbd5e1;
+      padding: 0.25rem 0.65rem;
+      border-radius: 0.35rem;
+      font-size: 0.75rem;
+      font-family: var(--mono);
+      border: 1px solid #334155;
+    }
+
+    .timeline-node {
+      border-left: 2px solid var(--card-border);
+      padding-left: 1.75rem;
+      margin-bottom: 2.75rem;
+      position: relative;
+    }
+
+    .timeline-node::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .role-head {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .role-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0.25rem 0 0.85rem;
+    }
+
+    .role-meta strong {
+      color: #cbd5e1;
+    }
+
+    .timeline-node ul {
+      list-style-type: none;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+    }
+
+    .timeline-node li {
+      margin-bottom: 0.6rem;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    .timeline-node li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .cert-pill {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 0.9rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .cert-pill svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--accent);
+      flex-shrink: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 2.5rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="status-row">
+        <div class="status-badge">
+          <span class="pulse"></span> Cloud & DevOps Delivery
+        </div>
+        <div class="info-badge">7+ Years IT Experience</div>
+        <div class="info-badge">Microsoft Azure & IaC Specialist</div>
+      </div>
+
+      <h1>Nikhil Sai Vadlakonda</h1>
+      <div class="role-subtitle">Cloud & DevOps Engineer | Azure CI/CD & Terraform</div>
+
+      <p class="summary">
+        Cloud & DevOps Engineer with 7+ years of IT experience across Tata Consultancy Services, Capgemini, and Wipro Technologies. Specialized in Microsoft Azure architecture, multi-environment Azure DevOps CI/CD pipeline automation, Terraform-based Infrastructure as Code (IaC), and container operations with Kubernetes and Docker. Proficient in security governance using Azure Key Vault, SSL/TLS certificate automation, Azure AD B2C identity workflows, and centralized monitoring with Azure Monitor and Log Analytics.
+      </p>
+
+      <div class="links-bar">
+        <a href="mailto:nikhilsaivadlakonda1@gmail.com">nikhilsaivadlakonda1@gmail.com</a>
+        <span>&bull;</span>
+        <a href="tel:+918801813361">+91 8801813361</a>
+        <span>&bull;</span>
+        <span>Hyderabad, Telangana, India</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Years IT Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">AZ-400</div>
+        <div class="stat-label">DevOps Engineer Expert</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">IaC</div>
+        <div class="stat-label">Terraform Certified</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">AI-900</div>
+        <div class="stat-label">Azure AI Fundamentals</div>
+      </div>
+    </div>
+
+    <section>
+      <div class="section-title">
+        <h2>Core Technical Skills</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Cloud Platforms</h3>
+          <p>Comprehensive resource management and networking across Microsoft Azure with complementary AWS operations.</p>
+          <div class="tags">
+            <span class="tag">Microsoft Azure</span>
+            <span class="tag">AWS (EC2)</span>
+            <span class="tag">Virtual Machines / VMSS</span>
+            <span class="tag">VNets / Subnets / NSGs</span>
+            <span class="tag">Application Gateway</span>
+            <span class="tag">Azure Front Door</span>
+            <span class="tag">Azure Storage</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>CI/CD & DevOps Automation</h3>
+          <p>Designing and maintaining multi-stage automated build and release pipelines, task groups, and source control.</p>
+          <div class="tags">
+            <span class="tag">Azure DevOps Pipelines</span>
+            <span class="tag">Azure Repos</span>
+            <span class="tag">Git</span>
+            <span class="tag">Jenkins</span>
+            <span class="tag">Bamboo</span>
+            <span class="tag">Task Groups</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Infrastructure as Code & Config</h3>
+          <p>Authoring reusable Terraform modules for deterministic multi-environment infrastructure provisioning.</p>
+          <div class="tags">
+            <span class="tag">Terraform Modules</span>
+            <span class="tag">Multi-Environment IaC</span>
+            <span class="tag">Ansible Playbooks</span>
+            <span class="tag">Configuration Automation</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Containers & Orchestration</h3>
+          <p>Deploying containerized microservices and troubleshooting Kubernetes clusters, nodes, and workloads.</p>
+          <div class="tags">
+            <span class="tag">Kubernetes / AKS</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Cluster Diagnostics</span>
+            <span class="tag">Pod & Node Triage</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Security & Identity Governance</h3>
+          <p>Hardening cloud architectures using centralized secrets handling, certificate renewal, and identity federation.</p>
+          <div class="tags">
+            <span class="tag">Azure Key Vault</span>
+            <span class="tag">SSL/TLS Certificates</span>
+            <span class="tag">Azure AD B2C</span>
+            <span class="tag">Passwordless Email Auth</span>
+            <span class="tag">RBAC</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Monitoring, Scripting & AI</h3>
+          <p>Telemetry tracking, automated shell scripting, and expanding capabilities in Azure AI workflows.</p>
+          <div class="tags">
+            <span class="tag">Azure Monitor</span>
+            <span class="tag">Log Analytics</span>
+            <span class="tag">Application Insights</span>
+            <span class="tag">PowerShell</span>
+            <span class="tag">Azure CLI</span>
+            <span class="tag">Python / RPA</span>
+            <span class="tag">Azure AI Foundry</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Professional Experience</h2>
+      </div>
+      <div>
+        <div class="timeline-node">
+          <div class="role-head">DevOps / Cloud Engineer &bull; Tata Consultancy Services (TCS)</div>
+          <div class="role-meta">Jan 2025 &ndash; Present | Hyderabad, India</div>
+          <ul>
+            <li>Support Azure cloud infrastructure and DevOps delivery activities for enterprise workloads, driving deployment coordination and environment stability.</li>
+            <li>Build, maintain, and troubleshoot CI/CD workflows using Azure DevOps and source control best practices.</li>
+            <li>Use Terraform to provision and manage cloud infrastructure across development, test, staging, and production environments where required.</li>
+            <li>Apply cloud operations practices around monitoring, access control, secrets, and deployment reliability.</li>
+            <li>Collaborate across software development and infrastructure operations teams to investigate pipeline and environment issues and document resolution runbooks.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-node">
+          <div class="role-head">Associate Consultant &ndash; DevOps & Cloud &bull; Capgemini</div>
+          <div class="role-meta">May 2022 &ndash; Dec 2024</div>
+          <ul>
+            <li>Designed, maintained, and supported automated build and deployment pipelines using Azure DevOps.</li>
+            <li>Automated recurring operational tasks with PowerShell and Azure CLI, packaging reusable steps through Azure DevOps task groups.</li>
+            <li>Provisioned Azure and AWS resources using Terraform modules and reusable infrastructure-as-code templates.</li>
+            <li>Created and maintained infrastructure templates for staging and production environments.</li>
+            <li>Supported Azure AD B2C tenant configuration, including passwordless email setup to improve sign-in security and user experience.</li>
+            <li>Configured Azure Front Door custom domains and supported SSL/TLS certificate request, renewal, and deployment using certificate utilities.</li>
+            <li>Set up and maintained Log Analytics workspaces, Application Insights, and Azure Key Vault integrations for centralized monitoring and secure secret handling.</li>
+            <li>Managed source code using Git and Azure Repos; supported Bamboo-based deployment automation.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-node">
+          <div class="role-head">Project Engineer &ndash; Cloud / DevOps &bull; Wipro Technologies</div>
+          <div class="role-meta">Jun 2019 &ndash; May 2022</div>
+          <ul>
+            <li>Provisioned and managed Azure infrastructure using Terraform, including Virtual Machines and supporting network resources.</li>
+            <li>Created Terraform templates and modules to support repeatable infrastructure deployment across environments.</li>
+            <li>Deployed AWS EC2 instances using Terraform as part of multi-cloud automation initiatives.</li>
+            <li>Configured Azure virtual networks, subnets, and Network Security Groups (NSGs) for virtual machines.</li>
+            <li>Supported Kubernetes clusters and investigated node, cluster, and deployment issues; worked with Docker-based workloads.</li>
+            <li>Maintained source control using Git and Azure Repos and supported CI/CD pipelines through Azure DevOps.</li>
+            <li>Developed Ansible playbooks and roles to automate configuration tasks, and automated workflows using Python and RPA Framework.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Certifications & Professional Development</h2>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-pill">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Microsoft Certified: DevOps Engineer Expert (AZ-400)
+        </div>
+        <div class="cert-pill">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          HashiCorp Certified: Terraform Associate
+        </div>
+        <div class="cert-pill">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Microsoft Certified: Azure Fundamentals (AZ-900)
+        </div>
+        <div class="cert-pill">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Microsoft Azure AI Fundamentals (AI-900)
+        </div>
+        <div class="cert-pill">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Azure AI Engineer (AI-103) &ndash; In Progress
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Education & Accolades</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Education</h3>
+          <p style="font-weight: 600; color: #f1f5f9; margin-bottom: 0.25rem;">B.Tech in Electronics & Communication Engineering</p>
+          <p>SR University, Warangal &bull; Graduated 2019</p>
+        </div>
+        <div class="card">
+          <h3>Awards & Recognition</h3>
+          <p style="font-weight: 600; color: #f1f5f9; margin-bottom: 0.25rem;">Winner &ndash; Abhivyaktha, SRIX Incubator</p>
+          <p>Women Harassment Safety Device using IoT</p>
+          <p style="font-weight: 600; color: #f1f5f9; margin-top: 0.75rem; margin-bottom: 0.25rem;">Runner-up &ndash; Cisco Hackathon 2018</p>
+          <p>Women Harassment Safety Device using IoT</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Nikhil Sai Vadlakonda &bull; Built for deployment on GitHub Pages</p>
+    </div>
+  </footer>
+
+</body>
+</html>
